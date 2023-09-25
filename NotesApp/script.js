@@ -1,45 +1,43 @@
-const searchBox = document.querySelector('.search input');
-const searchBtn = document.getElementById('btn');
-const listContainer = document.querySelector('#listContainer');
+const listContainer = document.querySelector('.list-container');
+const createBtn = document.querySelector('button');
 
-//take input
-searchBtn.addEventListener('click', () => {
+function showData(){
+    listContainer.innerHTML = localStorage.getItem('x');
+}
+showData();
 
-    if(searchBox.value == ''){
-        alert('Type Something');
-    }
-    else{
-        let li = document.createElement('Li');
-        li.innerHTML = searchBox.value;
-        listContainer.appendChild(li);
-        let span = document.createElement('span');
-        span.innerHTML = '\u00d7'
-        li.appendChild(span);
-    }
-    searchBox.value = '';
-    saveData();
+function saveData(){
+    localStorage.setItem('x', listContainer.innerHTML);
+}
+
+createBtn.addEventListener('click', () =>  {
+    const notes = document.createElement('p');
+    notes.classList.add('notes');
+    notes.setAttribute('contentEditable', 'true');
+    const imgs = document.createElement('img');
+    imgs.src = './imgs/delete.png';
+    listContainer.appendChild(notes).appendChild(imgs);
 })
 
+var notes = document.querySelectorAll('.notes');
+listContainer.addEventListener('click', (e) =>{
+        if(e.target.tagName === 'IMG'){
+            e.target.parentElement.remove();
+            saveData();
+        }
+        else if(e.target.tagName === 'P'){
+            notes = document.querySelectorAll('.notes');
+            notes.forEach(nt => {
+                nt.onkeyup = function(){
+                    saveData();
+                }
+            })
+        }
+})
 
-//add tasks
-listContainer.addEventListener('click', (e) => {
-    if(e.target.tagName == 'LI'){
-        e.target.classList.toggle('checked');
-        saveData();
+document.addEventListener("keydown", event=>{
+    if(event.key==="ENTER"){
+        document.execCommand("insertLineBreak");
+        event.preventDefault();
     }
-    else if(e.target.tagName == 'SPAN') {
-        e.target.parentElement.remove();
-        saveData();
-    }
-}, false);
-
-
-
-//add to local storage
-function saveData(){
-    localStorage.setItem('data' , listContainer.innerHTML);
-}
-function getTask(){
-    listContainer.innerHTML = localStorage.getItem('data');
-}
-getTask();
+})
