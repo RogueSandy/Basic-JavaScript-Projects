@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(38, 23, 57);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.main{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+h1{
+    width: 100%;
+    text-align: center;
+    color: aliceblue;
+}
+.galleryContainer{
+    display: flex;
+    align-items: center;
+}
+.btn{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.wrap{
+    display: flex;
+    width: 800px;
+    overflow-x: scroll;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.wrap::-webkit-scrollbar{
+    display: none;
+}
+.sec{
+    width: 100%;
+    height: 400px;
+    /* background-color: white; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    flex: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sec div{
+    width: 100%;
+    /* background-color: yellow; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(1);
+    filter: grayscale(100%);
+    transition: all .4s;
+    overflow: hidden;
+}
+.info{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -85px;
+    cursor: pointer;
+}
+.info:hover{
+    bottom: 0;
+}
+.info h2{
+    padding: 5px 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+}
+.info p{
+    padding: 5px 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+.sec div:hover{
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+.img1{
+    background-image: url(./imgs/afroSamurai1.jpg);
+    position: relative;
+}
+.img2{
+    background-image: url(./imgs/codeGeass2.jpg);
+}
+.img3{
+    background-image: url(./imgs/deathNote3.jpg);
+}
+.img4{
+    background-image: url(./imgs/steinsGate4.jpg);
+}
+.img5{
+    background-image: url(./imgs/SpaceDandy5.jpg);
+}
+.img6{
+    background-image: url(./imgs/fullmetalAlchemist6.jpg);
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popUp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="btn">
+        <button onclick="showPopUp()">Show Map</button>
+    </div>
+    <div class="popUp">
+        <img src="./404-tick.png">
+        <p>Thank You!</p>
+        <p class="para">Your Deatils are Update successfuly! <3</p>
+        <button class="ok" onclick="hidePopUp()">Okay</button>
+    </div>
+
+    <script>
+        const popUp = document.querySelector('.popUp');
+
+        function showPopUp(){
+            popUp.classList.add('show');
+        }
+        function hidePopUp(){
+            popUp.classList.remove('show');
+        }
+
+    </script>
+</body>
+</html>

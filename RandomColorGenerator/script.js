@@ -10,3 +10,5 @@ const getColor = () => {
 document.getElementById('btn').addEventListener('click', getColor);
 
 getColor();
+
+console.log(Math.floor( Math.random() * 16777215));
