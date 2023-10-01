@@ -6,5 +6,5 @@ I enjoyed the time I spent learning JavaScript.
 Anyways, I'm pretty good in JS now and heading towards BackEnd things.
 Wish me Luck.
 
-And dont tell me to share about how you liked my projects.
+And dont forget to tell me about how much you liked my projects.
 Also feel free to use my code for Your purpose.
